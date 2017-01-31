@@ -12,4 +12,4 @@ tools/srec2bin/srec2bin
 tools/wpcdebug/wpcdebug
 build/*
 mach
-
+.vagrant
