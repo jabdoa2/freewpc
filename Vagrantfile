@@ -40,9 +40,11 @@ Vagrant.configure("2") do |config|
     cd ../..
     git clone https://github.com/LuskeyNoah/freewpc.git
     # 5) We should be good to go. Ssh into the machine and try building freewpc!
-    #    though just to be friendly, I'm going to go ahead and copy you a .config file
     cd freewpc
+    # just to be friendly, I'm going to go ahead and copy you a .config file
     cp config.example .config
+    # need to make the ownership the vagrant user
     cd ..
+    sudo chown -R vagrant freewpc
   SHELL
 end
