@@ -23,6 +23,11 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
 
+  # We're going to mount this repository within the virtual machine at /freewpc
+  config.vm.synced_folder ".", "/freewpc"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
@@ -36,15 +41,5 @@ Vagrant.configure("2") do |config|
     # 3) go into the gcc6809 directory and build everything
     cd gcc-4.3.4-6809/build-6809
     sudo make everything
-    # 4) Go back to the home directory and clone the freewpc repository
-    cd ../..
-    git clone https://github.com/LuskeyNoah/freewpc.git
-    # 5) We should be good to go. Ssh into the machine and try building freewpc!
-    cd freewpc
-    # just to be friendly, I'm going to go ahead and copy you a .config file
-    cp config.example .config
-    # need to make the ownership the vagrant user
-    cd ..
-    sudo chown -R vagrant freewpc
   SHELL
 end

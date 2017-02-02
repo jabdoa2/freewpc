@@ -1015,7 +1015,7 @@ callset.in :
 # 'make clean' does what you think.
 #
 .PHONY : clean
-clean: clean_derived clean_build clean_gendefines clean_tools
+clean: clean_derived clean_build clean_gendefines clean_tools clean_time
 	$(Q)for dir in `echo . kernel common effect fonts images test $(MACHINE_DIR) $(PLATFORM_DIR) sim cpu/$(CPU)`;\
 		do echo "Cleaning in '$$dir' ..." && \
 		pushd $$dir >/dev/null && rm -f $(TMPFILES) && \
@@ -1036,6 +1036,10 @@ clean_build:
 .PHONY : clean_tools
 clean_tools:
 	$(Q)rm -f $(HOST_OBJS) $(TOOLS)
+
+.PHONY : clean_time
+clean_time:
+	$(Q)touch *
 
 .PHONY : show_objs
 show_objs:
