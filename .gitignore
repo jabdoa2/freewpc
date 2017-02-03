@@ -13,3 +13,4 @@ tools/wpcdebug/wpcdebug
 build/*
 mach
 .vagrant
+.vscode
