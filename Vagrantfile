@@ -26,7 +26,8 @@ Vagrant.configure("2") do |config|
   # We're going to mount this repository within the virtual machine at /freewpc
   config.vm.synced_folder ".", "/freewpc"
   config.vm.synced_folder ".", "/vagrant", disabled: true
-
+  # Change this line to the Visual Pinball pinmame rom directory
+  config.vm.synced_folder "C:\\Program Files (x86)\\Visual Pinball\\VPinMAME\\roms", "/roms"
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
@@ -34,6 +35,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     sudo apt-get install -y git
+    sudo apt-get install -y zip
     # 1) clone the gcc6809 source. TODO: it may be better to just have the binary
     git clone https://LuskeyNoah@bitbucket.org/LuskeyNoah/gcc-4.3.4-6809.git
     # 2) get the necessary dependencies to build gcc
