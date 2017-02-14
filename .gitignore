@@ -14,3 +14,5 @@ build/*
 mach
 .vagrant
 .vscode
+doc/doxygen/html/
+doc/doxygen/latex/

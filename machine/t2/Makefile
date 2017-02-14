@@ -61,11 +61,12 @@ PINMAME_OTHER_ROMS = t2_u*
 # and leffs.  RTTs must go into GAME_OBJS.
 #
 
-GAME_OBJS = 
+GAME_OBJS =
 
 GAME_TEST_OBJS = 
 
 GAME_INCLUDES =
 
-GAME_PAGED_OBJS = amode.o targets.o drop.o misc.o
+GAME_PAGED_OBJS = targets.o drop.o misc.o shots.o
+GAME2_OBJS = amode.o combo.o
 
