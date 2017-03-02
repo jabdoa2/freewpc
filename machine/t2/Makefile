@@ -67,6 +67,6 @@ GAME_TEST_OBJS =
 
 GAME_INCLUDES =
 
-GAME_PAGED_OBJS = targets.o drop.o misc.o shots.o
-GAME2_OBJS = amode.o combo.o
+GAME_PAGED_OBJS = skull.o shots.o combo.o cannon_driver.o
+GAME2_OBJS = amode.o 
 
