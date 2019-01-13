@@ -252,6 +252,9 @@ CFLAGS += -DGCC_VERSION=$(GCC_VERSION)
 CFLAGS += -Wall
 CONLY_FLAGS += -Wstrict-prototypes
 
+# fix compilation on never GCC versions
+CFLAGS += -fgnu89-inline
+
 #
 # Define lots of other things based on make parameters
 #
